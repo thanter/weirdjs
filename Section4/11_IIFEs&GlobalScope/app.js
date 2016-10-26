@@ -1,26 +1,27 @@
 
-var greeting = 'Holla';         // variable in global scope
+var greeting = 'Hola';         // variable in global scope
 
 
 (function(global, name) {
 
-    // this has nothing to do with the global greeting var
+    // this has nothing to do with the global 'greeting' var
     // this IIFE creates its own execution context
     var greeting = "Hello";
+
+    console.log(greeting + " " + name); // Hello John
+
 
     // If you want to mutate the global object, it is a good practice
     // to pass the global object as parameter and do something like:
     // global.greeting = "Hiya";
 
-    // DON'T access the global object karfota
+    // DON'T access the global object like this:
     // eg: windows.greeting = "Hiya";
 
-    console.log(greeting + " " + name);
-
-})(window, 'Thanasis');
+})(window, 'John');
 
 
-console.log(greeting);          // this is hola OR Hiya
+console.log(greeting);  // Hola
 
 /*
  The reason Immediately Invoked Function Expressions are so useful and so commonly used,

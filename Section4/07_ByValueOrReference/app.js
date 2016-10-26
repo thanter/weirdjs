@@ -1,20 +1,20 @@
 (function() {
 
     var a = 3;
-    var b = a;      // by value, the value is copied
+    var b = a;      // assigned by value, the value is copied
 
-    console.log(a);
-    console.log(b);
+    console.log(a); // 3
+    console.log(b); // 3
 
     b = 5;          // if I change b, a is intact
-    console.log(a);
-    console.log(b);
+    console.log(a); // 3
+    console.log(b); // 5
     console.log("----------------------");
 
 
-    // All objects (including functions) are by REFERENCE
+    // All objects (including functions) are 'assigned' by REFERENCE
     var person = {
-        name: 'Thanasis'
+        name: 'John'
     };
 
     var animal = person;
@@ -25,22 +25,24 @@
     animal.name = "Kate";   // mutate (change something)
     console.log(animal);
 
-    // person object is changed as well
+    // person object has changed as well
     console.log(person);
     console.log("----------------------");
 
 
     function changeNameAgain(obj) {
-        obj.name = "Petros";
+        obj.name = "Peter";
     }
+    // Actually calling the function
     changeNameAgain(animal);
-    console.log(animal);
-    console.log(person);
+    console.log(animal);    // name changed
+    console.log(person);    // name changed as well, still pointing to the same memory position
+
 
     // equals operator sets up new memory space (new address)
     // completely different object
     var anotherPerson = {
-        name: "John"
+        name: "Jack"
     };
     console.log(anotherPerson);
 })();
@@ -48,10 +50,10 @@
 
 /*
  In JavaScript, primitive values (numbers, strings, Booleans, Undefined & Null) are set by value.
- This means that on line 3 & 4, when we set variable b = a, we are actually
+ This means that on line 4 & 9, when we set variable b = a, we are actually
  creating another space in memory that has the same value.
  By contrast, objects and functions are set by reference,
- which means that on line 18, when we set d = c, we are pointing
- to the same memory space as c.
- If we make any changes, or 'mutate', variable c, it will also apply to d.
+ which means that on line 20, when we set animal = person, we are pointing
+ to the same memory space as person.
+ If we make any changes, or 'mutate', object animal, it will also apply to person.
  */

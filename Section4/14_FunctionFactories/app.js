@@ -10,30 +10,31 @@
             }
 
             if (language === 'es') {
-                console.log("Holla " + firstName + ' ' + lastName);
+                console.log("Hola " + firstName + ' ' + lastName);
             }
         };
 
     }
 
-    var englishGreeter = makeGreeter();
-    englishGreeter("Thanasis", "Nterelis");
+    var englishGreeter = makeGreeter();         // no argument use defaults
+    englishGreeter("John", "Doh");
 
     var englishGreeter = makeGreeter('en');
-    englishGreeter("Thanasis", "Nterelis");
+    englishGreeter("John", "Doh");
 
     var spanishGreeter = makeGreeter('es');
-    spanishGreeter("Thanasis", "Nterelis");
+    spanishGreeter("John", "Doh");
 })();
 
 
 /*
  In this example, we rely on closures to create a 'function factory'.
- What is happening is that each time we run makeGreeting, a seperate execution context is created
+ What is happening is that each time we run makeGreeting, a separate execution context is created
  and we are passing a different language argument to it.
- The makeGreeting function returns the inner annonymous function and then is popped off the stack,
- it does this twice. Once for each time it is called on lines 18 & 19.
- We then set the inner annonymous functions to variables greetEnglish and greetSpanish on lines 21-22.
+ The makeGreeting function returns the inner anonymous function and then is popped off the stack,
+ it does this for each time it is called on lines 19, 22, 25.
+
+
  The inner functions it returns contain a different outer reference to
  each memory space that is created, which both contain different values of the language argument (one with 'en' and one with 'es').
  Every time you call a function, it gets its own execution context. Any functions inside of it will

@@ -30,20 +30,20 @@
      */
 
 
-    // If i want to return 0,1,2 i need to associate the inner function with a different outer environment each time.
+    // If i want to return 0,1,2 i need to associate the inner function with a different outer environment EACH LOOP.
     function buildFunctions2() {
         var arr = [];
 
-
         for (var i = 0; i < 3; i++) {
             arr.push(
+                // IIFE, new execution context
                 (function(j) {
                     // j is a completely new variable in the iife's scope
                     // this is automatically invoked, so j is associated with 3 different outer environments
                     return function() {
                         console.log(j);
                     }
-                }(i))
+                }(i))       // passing the current 'i' to the iife
             );
         }
 

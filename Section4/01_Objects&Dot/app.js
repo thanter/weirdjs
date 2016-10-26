@@ -1,18 +1,19 @@
 var person = new Object();
 
-person["firstname"] = "Tony";
+// Adding some properties
+person["firstname"] = "John";
+person["lastname"] = "Doh";
 
-person["lastname"] = "Alicea";
 
 var firstNameProperty = "firstname";
-
 console.log(person);
+console.log(person[firstNameProperty]);
 
-// console.log(person[firstNameProperty]);
-
+// Dot notation
 console.log(person.firstname);
 console.log(person.lastname);
 
+// Creating a new object
 person.address = new Object();
 person.address.street =  "111 Main St.";
 person.address.city = "New York";
@@ -28,7 +29,7 @@ console.log(person["address"]["state"]);
 
  Objects can contain functions, known as methods.
 
- Dot notation is the preffered way of reffering to object properties.
+ Dot notation is the preferred way of referring to object properties.
 
  Object literal notation {} is the preferred way to create objects.
 
@@ -38,12 +39,12 @@ console.log("====================================");
 
 var animal = {
     type: 'dog',
-    name: 'lacy'
+    name: 'Lacy'
 }
 console.log(animal);
 
 // Add new properties on the fly
-animal.colour = 'black';
+animal.colour = 'black&white';
 
 // New method
 animal.sayHello = function() {
@@ -54,7 +55,7 @@ console.log(animal.colour);
 console.log(animal.sayHello());
 
 animal.owner = {
-    name: 'Thanasis',
+    name: 'John',
     age: 27
 }
 console.log(animal.owner.name);

@@ -17,14 +17,16 @@
      */
 
     // IIFE
-    var greeting = function(name) {
+    var greeting = (function(name) {
         return "Hello " + name;
-    }('thanasis');
+    })('John');
 
-    // The function is already called, with the argument 'thanasis'
-    console.log(greeting);              // Hello thanasis
+    // The function has already been called, with the argument 'John'
+    console.log(greeting);  // Hello John
+
+
 
     (function() {
-        console.log("nobody called me, i ran on my own");
-    }());
+        console.log("nobody called me, I ran on my own");
+    })();
 })();

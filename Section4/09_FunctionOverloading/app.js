@@ -25,8 +25,8 @@
 
 
 
-    greetEnglish('Thanasis', 'Nterelis');
-    greetSpanish('Angie', 'Papastergiou');
+    greetEnglish('John', 'Doh');
+    greetSpanish('Jane', 'Dooooh');
 })();
 
 

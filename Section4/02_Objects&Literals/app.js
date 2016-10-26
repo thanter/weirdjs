@@ -1,33 +1,36 @@
 (function() {
-    var me = {
-        name: 'Thanasis',
+    // Creating object using an object literal
+    var john = {
+        name: 'John',
         age: 27,
         address: {
-            street: 'Perdika 98',
-            city: 'Thessaloniki'
+            street: 'Main Str. 111',
+            city: 'New York'
         }
     };
 
-    console.log(me);
+    console.log(john);
 
+    // Function that accepts an object as a parameter
     function status(person) {
         console.log(
             person.name + ' lives in ' + person.address.city
         );
     }
 
-    status(me);
+    status(john);
 
+    // OR
     status({
-        name: 'Angie',
+        name: 'Jane',
         address: {
-            street: 'Kommita',
-            city: 'Almyros'
+            street: 'Secondary Str. 222',
+            city: 'Chicago'
         }
     });
 })();
 /*
- In JavaScript, object literal syntax is generally preferred to the object construtor function.
+ In JavaScript, object literal syntax is generally preferred to the object constructor function.
  It is much quicker to write, performs slightly better and is much easier to read.
- Object literal syntax also allows us to create new objects on the fly, as in line 21.
+ Object literal syntax also allows us to create new objects on the fly, as in line 22.
  */

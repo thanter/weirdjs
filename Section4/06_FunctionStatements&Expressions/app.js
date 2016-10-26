@@ -4,9 +4,10 @@
         console.log("Hi");
     }
 
+    // Calling the function
     greet();
 
-    // Anonymous function expression. No hoisting!!!!
+    // Anonymous function expression. No hoisting!!!! ('cause it's not yet invoked)
     var anonymousFunc = function() {
         console.log("Hello");
     };

@@ -1,8 +1,8 @@
 (function() {
 
     var person = {
-        firstName: 'Thanasis',
-        lastName: 'Nterelis',
+        firstName: 'John',
+        lastName: 'Doh',
         fullName: function() {
             return this.firstName + " " + this.lastName;
         }
@@ -13,7 +13,6 @@
         // normally 'this' refers to the global obj
         // what if i want to be a different obj?
         // I bind the different object to this function
-
         console.log(this);
         console.log('Logged: ' + this.fullName());
         console.log('-----------------');
@@ -21,6 +20,7 @@
     };
 
     var logPersonName = logName.bind(person);           // this will refer to person obj
+    // And now i call the function
     logPersonName();
     /*
      ---- bind -----
@@ -31,12 +31,12 @@
 
 
     var person2 = {
-        firstName: 'Thanasis2',
-        lastName: 'Nterelis2',
+        firstName: 'John2',
+        lastName: 'Doh2',
         fullName: function() {
             return this.firstName + " " + this.lastName;
         }
     }
-    logName.call(person);
+    logName.call(person2);
     logName.call();
 })();
